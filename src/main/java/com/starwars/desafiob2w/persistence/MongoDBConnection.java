@@ -102,24 +102,31 @@ public class MongoDBConnection {
 
     //all transformation methods must remain inside mongodbconnection
     //method to convert a bson document to a planet object
-    private Planet convertDocumentToPlanet(Document document){
+    public Planet convertDocumentToPlanet(Document document){
         if (document == null){
             return null;
         }
 
         Planet planet = new Planet();
 
-        planet.setId(document.getObjectId("_id").toString());
+        ObjectId objectId = document.getObjectId("_id");
+        if (objectId != null) {
+            planet.setId(objectId.toString());
+        }
         planet.setName(document.getString("name"));
         planet.setClimate(document.getString("climate"));
         planet.setTerrain(document.getString("terrain"));
-        planet.setNumberofappearances(document.getInteger("numberofappearances", -1));
+        planet.setNumberofappearances(document.getInteger("numberofappearances"));
 
         return planet;
     }
 
     //method to convert a planet object to a bson document
-    private Document createDocumentFromPlanet(Planet planet){
+    public Document createDocumentFromPlanet(Planet planet){
+        if (planet == null){
+            return null;
+        }
+
         Document document = new Document();
         document.append("name", planet.getName());
         document.append("climate", planet.getClimate());
