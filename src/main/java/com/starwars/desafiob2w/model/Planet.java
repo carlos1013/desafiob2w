@@ -5,7 +5,7 @@ public class Planet {
     public String name;
     public String climate;
     public String terrain;
-    public Integer numberOfAppearances;
+    public Integer numberofappearances;
 
     public String getId() {
         return id;
@@ -39,11 +39,11 @@ public class Planet {
         this.terrain = terrain;
     }
 
-    public Integer getNumberOfAppearances() {
-        return numberOfAppearances;
+    public Integer getNumberofappearances() {
+        return numberofappearances;
     }
 
-    public void setNumberOfAppearances(Integer numberOfAppearances) {
-        this.numberOfAppearances = numberOfAppearances;
+    public void setNumberofappearances(Integer numberofappearances) {
+        this.numberofappearances = numberofappearances;
     }
 }
