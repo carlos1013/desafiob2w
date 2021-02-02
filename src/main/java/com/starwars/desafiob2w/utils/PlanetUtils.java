@@ -136,4 +136,22 @@ public class PlanetUtils {
 
         return planet;
     }
+
+    public static boolean areFieldsEqual(Object obj1, Object obj2){
+        if (obj1 != null && (obj2 == null || !obj2.equals(obj1))){
+            return false;
+        }
+        else if (obj1 == null && obj2 != null){
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean comparePlanets(Planet p1, Planet p2){
+        return areFieldsEqual(p1.getId(), p2.getId()) &&
+                areFieldsEqual(p1.getName(), p2.getName()) &&
+                areFieldsEqual(p1.getTerrain(), p2.getTerrain()) &&
+                areFieldsEqual(p1.getClimate(), p2.getClimate()) &&
+                areFieldsEqual(p1.getNumberofappearances(), p2.getNumberofappearances());
+    }
 }
