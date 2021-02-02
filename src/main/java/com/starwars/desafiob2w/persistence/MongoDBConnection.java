@@ -4,6 +4,7 @@ import com.mongodb.client.*;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.result.InsertOneResult;
 import com.starwars.desafiob2w.model.Planet;
+import com.starwars.desafiob2w.utils.PlanetUtils;
 import org.bson.BsonValue;
 import org.bson.Document;
 import org.bson.conversions.Bson;
@@ -133,5 +134,13 @@ public class MongoDBConnection {
         document.append("terrain", planet.getTerrain());
         document.append("numberofappearances", planet.getNumberofappearances());
         return document;
+    }
+
+    public boolean compareDocuments(Document d1, Document d2){
+        return PlanetUtils.areFieldsEqual(d1.get("_id"), d2.get("_id")) &&
+                PlanetUtils.areFieldsEqual(d1.get("name"), d2.get("name")) &&
+                PlanetUtils.areFieldsEqual(d1.get("terrain"), d2.get("terrain")) &&
+                PlanetUtils.areFieldsEqual(d1.get("climate"), d2.get("climate")) &&
+                PlanetUtils.areFieldsEqual(d1.get("numberofappearances"), d2.get("numberofappearances"));
     }
 }
