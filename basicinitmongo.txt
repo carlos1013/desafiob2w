@@ -1,0 +1,3 @@
+use planets
+db.planets.insert([{name: "Tatooine", climate: "Hot and arid", terrain: "Canions", numberofappearances: 5},
+{name: "Hoth", climate: "Frigid", terrain: "Frozen ice plains", numberofappearances: 1}, {name: "Kamino", climate: "Cold", terrain: "Oceans", numberofappearances: 1}])
