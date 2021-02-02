@@ -49,8 +49,8 @@ Accepted caso não ocorra nenhum erro na exclusão.
 localhost:8080/planets/{id}
 
 ## Tecnologias utilizadas no projeto (Java):
-MongoDB
-Spring Boot
-JUnit
-JMockit
-Mockito
+##### MongoDB
+##### Spring Boot
+##### JUnit
+##### JMockit
+##### Mockito
