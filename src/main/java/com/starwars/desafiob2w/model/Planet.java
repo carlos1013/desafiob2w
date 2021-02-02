@@ -7,6 +7,19 @@ public class Planet {
     public String terrain;
     public Integer numberofappearances;
 
+    public Planet(String id, String name, String terrain,
+                  String climate, Integer numberOfAppearences){
+        this.id = id;
+        this.name = name;
+        this.terrain = terrain;
+        this.climate = climate;
+        this.numberofappearances = numberOfAppearences;
+    }
+
+    public Planet(){
+        //empty constructor
+    }
+
     public String getId() {
         return id;
     }
