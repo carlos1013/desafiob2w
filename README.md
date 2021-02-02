@@ -1,7 +1,7 @@
 # Desafio B2W
 Construção de uma API Rest para representar planetas vistos nos filmes da série Star Wars.
 
-## Arquivo basico de inicialização do banco: basicinitmongo.txt
+**Arquivo basico de inicialização do banco: basicinitmongo.txt**
 
 ## Endpoints disponíveis:
 #### GetPlanet (GET):
