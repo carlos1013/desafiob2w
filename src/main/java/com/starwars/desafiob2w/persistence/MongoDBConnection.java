@@ -59,7 +59,10 @@ public class MongoDBConnection {
 
     public void deletePlanet(String id) throws Exception {
         MongoCollection<Document> collection = getMongoCollection(COLLECTION_NAME);
-        collection.deleteOne(Filters.eq("_id", id));
+        
+        //convert string to object id first
+        ObjectId objectId = new ObjectId(id);
+        collection.deleteOne(Filters.eq("_id", objectId));
     }
 
     public Planet getPlanetFromParameters(String id, String name) throws Exception {
